@@ -71,7 +71,8 @@ img, picture, video, canvas, svg {
     letter-spacing: 0.12%;
     font-size: .813rem;
     font-weight: var(--fw-regular);
-    padding: 1em 0em;
+    padding: 1.5em 0em;
+    padding-bottom: 2.5em;
 
   }
 
@@ -98,15 +99,21 @@ img, picture, video, canvas, svg {
     /* adding display:grid for media query */
     display: grid;
     max-width: 725px;
-
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
   }
+
+
 
   .furniture__container {
     padding: 2em;
-    padding-bottom: 0em; 
-
+    padding-bottom: 0em;
+   
+  
 
   }
+  
 
   .creator {
     display: flex;
@@ -130,31 +137,103 @@ img, picture, video, canvas, svg {
         border-radius: 50%;
     }
 
+    .cheat__arrow {
+      align-self: center;
+        background-color: var(--Grey-500);
+        padding: .6em;
+        border-radius: 50%;
+    }
+    
+    /* makes makes the arrow icon white when clicked */
+    .cheat__arrow img {
+      filter: brightness(0) invert(1);
+    
 
+    }
     
     .creator__details {
         padding-right: 2.5em;
         align-self: center;
     }
 
-    
+    button {
+      border: none;
+      cursor: pointer;
+  
+    }
+
+    .creator__2 {
+      display: none;
+      background-color: var(--Grey-900);
+      padding: 1em;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .share {
+      display: flex;
+      place-content: center;
+      align-items: center;
+      gap: 1em;
+
+    }
+
+    .share__text {
+      color: var(--Grey-400);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: .813rem;
+      margin-right: .7em;
+    }
+
+    .fbook {
+      height: 20px;
+      width: 20px;
+    }
+
+    .twitter {
+      width: 20px;
+      height: 16px;
+    }
+
+    .pin {
+      width: 20px;
+      height: 20px;
+      margin-right: 3em;
+    }
+
+    .arrowContain {
+      display: none;
+    }
+
+
+        
+
 
     /*adding media query */
     @media (min-width: 670px) {
       .furniture {
         grid-template-columns: repeat(5, 1fr);
+        overflow: visible;
       }
 
       
       .furniture__img {
         grid-column-start: 1;
         grid-column: span 2;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        overflow: hidden;
       }
 
       .furniture__container {
         grid-column-start: 3;
         grid-column: span 3;
       }
+
+
+
+
 
       /*
         .furniture {
@@ -178,8 +257,57 @@ img, picture, video, canvas, svg {
         padding-bottom: 2em;
         padding-top: 0em;
       }
-  
-        }
 
+      .arrowContain {
+        position: relative;
+        display: none;
+
+    
+      }
+
+      .creator__2 {
+        display: none;
+      }
+  
+      /* position abosulte allows us to put pop up where its needed - also need to set it's parent container's position to relative*/
+      .creator__3 {
+        display: flex;
+        background-color: var(--Grey-900);
+        padding: 1em;
+        border-radius: 10px;
+        margin: 0em 5em;
+        position: absolute;
+        left: 150px;
+        bottom: 25px;
       
+        
+      
+      
+      }
+  
+      .share2 {
+        display: flex;
+        place-content: center;
+        align-items: center;
+        gap: 1em;
+        padding-left: 3em;
+      }
+  
+      /* creates down pointing arrow on share box */
+      .arrowL {
+        width: 0;
+        height: 0;
+        border-top: 10px solid var(--Grey-900);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        margin-left: 320px;
+        position: absolute;
+        left: 0px;
+        bottom: 15px;
+      }
+  
+    }
+  
+      
+
   

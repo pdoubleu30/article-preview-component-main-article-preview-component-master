@@ -20,6 +20,17 @@
           <h1>Shift the overall look and feel by adding these wonderful touches to furniture in your home.</h1>
           <p>Ever been in a room and felt like something was missing? Pherhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete.</p>
         </div>
+          <div class="arrowContain">
+            <div class = "creator__3">
+              <div class = "share2">
+                <p class = "share__text">share</p>
+                <img class = "fbook" src="./images/icon-facebook.svg" alt = "facebook f logo">
+                <img class = "twitter" src="./images/icon-twitter.svg" alt = "twitter bird logo">
+                <img class = "pin" src="./images/icon-pinterest.svg" alt = "pinterest p logo">
+              </div>
+            </div>
+            <div class = "arrowL"></div>
+          </div>
         <div class="creator">
           <div class="creator__headshot">
             <img src="./images/avatar-michelle.jpg" alt="michelle's headshot" />
@@ -28,14 +39,49 @@
             <h2> Michelle Appleton</h2>
             <p>28 Jun 2020</p>
           </div>
-          <div class="creator__arrow">
-            <img class="arrow" src="./images/icon-share.svg" alt="arrow pointing right" />
-          </div>
+          <button class = "creator__arrow bbutton" onclick="
+              const mediaQuery = window.matchMedia('(min-width: 670px)');
+              const endButton = document.querySelector('.bbutton');
+              if (mediaQuery.matches && !endButton.classList.contains('cheat__arrow')) {
+                endButton.classList.add('cheat__arrow');
+                endButton.classList.remove('creator__arrow');
+                document.querySelector('.arrowContain').style.display = 'flex';
+              } else if (!endButton.classList.contains('cheat__arrow')) {
+                endButton.classList.add('cheat__arrow');
+                endButton.classList.remove('creator__arrow');
+                document.querySelector('.creator__2').style.display = 'block';
+                document.querySelector('.creator').style.display = 'none';
+               } else {
+                document.querySelector('.arrowContain').style.display = 'none';
+                endButton.classList.remove('cheat__arrow');
+                endButton.classList.add('creator__arrow');
+               
+               }
+              "><img class="arrow" src="./images/icon-share.svg" alt="arrow pointing right" >
+          </button>
         </div>
       </div>
     </article>
+    <div class = "creator__2 endC">
+      <div class = "share">
+        <p class = "share__text">share</p>
+        <img class = "fbook" src="./images/icon-facebook.svg" alt = "facebook f logo">
+        <img class = "twitter" src="./images/icon-twitter.svg" alt = "twitter bird logo">
+        <img class = "pin" src="./images/icon-pinterest.svg" alt = "pinterest p logo">
+        <button class = "cheat__arrow bbutton" onclick="
+            const endBuutton = document.querySelector('.bbutton');
+            if (!endBuutton.classList.contains('creator__arrow')) {
+            endBuutton.classList.add('creator__arrow');
+            endBuutton.classList.remove('cheat__arrow');
+            document.querySelector('.creator__2').style.display = 'none';
+            document.querySelector('.creator').style.display = 'flex';
+            }
+            "><img class="arrow" src="./images/icon-share.svg" alt="arrow pointing right" >
+        </button> 
+      </div>
 
   </main>
-  <script src="scripts/main.js"></script>
+<script src="scripts/main.js"></script>
+</script>
 </body>
 </html>
